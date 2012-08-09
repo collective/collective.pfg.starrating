@@ -7,7 +7,7 @@ longdesc =  open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()  
 longdesc += open(os.path.join(os.path.dirname(__file__), 'LICENSE.rst')).read()  
 
-setup(name='collective.pfg.soup',
+setup(name='collective.pfg.starrating',
       version=version,
       description=shortdesc,
       long_description=longdesc,

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
+    <javascript cacheable="True" compression="safe" cookable="True"
+        enabled="True" expression="" id="++resource++collective.pfg.starrating/jquery.rating/jquery.rating.js"
+        inline="False" />
+    <javascript cacheable="True" compression="safe" cookable="True"
+        enabled="True" expression="" id="++resource++collective.pfg.starrating/starrating.js"
+        inline="False" />
+</object>

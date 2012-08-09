@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.pfg.starrating">
+
+    <includeDependencies package="." />
+
+    <class class=".field.FormStarRatingField"/>
+
+    <five:registerPackage package="." initialize=".initialize" />    
+    
+    <browser:resourceDirectory
+        name="collective.pfg.starratings"
+        directory="resources"
+    />
+           
+    <genericsetup:registerProfile
+        name="default"
+        title="Star Rating Field for PloneFormGen"
+        directory="profile"
+        description="A PloneFormGen field to rate with stars"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+                     
+</configure>
