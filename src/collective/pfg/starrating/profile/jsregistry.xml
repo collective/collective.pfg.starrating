@@ -4,6 +4,6 @@
         enabled="True" expression="" id="++resource++collective.pfg.starrating/jquery.rating/jquery.rating.js"
         inline="False" />
     <javascript cacheable="True" compression="safe" cookable="True"
-        enabled="True" expression="" id="++resource++collective.pfg.starrating/starrating.js"
+        enabled="True" expression="" id="++resource++collective.pfg.starrating/pfgstarrating.js"
         inline="False" />
 </object>

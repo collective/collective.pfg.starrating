@@ -4,7 +4,7 @@
 	<property name="title" i18n:translate="StarRating Field">Star Rating Field</property>
 	<property name="description" i18n:translate="StarRating Field (radio buttons or select)">A field with stars
 		to click on.</property>
-	<property name="icon_expr">string:$portal_url/++resource++collective.pfg.starrating/jquery.rating/star.gif</property>
+	<property name="icon_expr">string:$portal_url/++resource++collective.pfg.starrating/star_icon.gif</property>
 	<property name="content_meta_type">FormStarRatingField</property>
 	<property name="product">collective.pfg.starrating</property>
 	<property name="factory">addFormStarRatingField</property>

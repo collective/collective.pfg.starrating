@@ -40,7 +40,9 @@ class FormStarRatingField(BaseFormField):
         self.fgField = StringVocabularyField('fg_starrating_field',
             searchable=0,
             required=0,
-            widget=atapi.SelectionWidget(),
+            widget=atapi.SelectionWidget(
+                macro="pfg_starrating"
+            ),
             vocabulary='_get_selection_vocab',
             enforceVocabulary=1,
             write_permission=View,

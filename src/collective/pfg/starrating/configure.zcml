@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.pfg.starrating">
 
@@ -9,10 +10,12 @@
 
     <class class=".field.FormStarRatingField"/>
 
-    <five:registerPackage package="." initialize=".initialize" />    
+    <five:registerPackage package="." initialize=".initialize" />
+    
+    <cmf:registerDirectory name="starrating_atwidget"/>    
     
     <browser:resourceDirectory
-        name="collective.pfg.starratings"
+        name="collective.pfg.starrating"
         directory="resources"
     />
            
