@@ -73,6 +73,7 @@
 				elm.parents(".content-box-content:first").removeClass('formerror');
 				if( elm.hasClass("ui-rating-cancel") ) {
                     methods.empty(elm, elm.parent());
+                    $(evt.data.selectBox).find("option:selected").removeAttr("selected");
 				}
 				else
 				{
@@ -89,19 +90,19 @@
 						.attr("className", "ui-rating-cancel ui-rating-cancel-empty");
 					//Use our value
 					value = elm.attr("value");
-				}
 				
-				//Set the select box to the new value
-				if( !evt.data.hasChanged )
-				{
-					$(evt.data.selectBox).val( value ).trigger("change");
-					
-					// set uiVlaue
-					if (true == settings.showTarget) {
-						uiValue = $(evt.data.selectBox).find("option:selected").text();
-						targetId = "#" + evt.data.selectBox.attr("name");
-						$(targetId).text(uiValue);
-				    }
+					//Set the select box to the new value
+					if( !evt.data.hasChanged )
+					{
+						$(evt.data.selectBox).val( value ).trigger("change");
+						
+						// set uiVlaue
+						if (true == settings.showTarget) {
+							uiValue = $(evt.data.selectBox).find("option:selected").text();
+							targetId = "#" + evt.data.selectBox.attr("name");
+							$(targetId).text(uiValue);
+					    }
+					}
 				}
 			},
 			change: function(evt)
