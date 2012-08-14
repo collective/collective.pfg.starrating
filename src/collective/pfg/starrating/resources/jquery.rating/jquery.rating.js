@@ -94,7 +94,8 @@
 					//Set the select box to the new value
 					if( !evt.data.hasChanged )
 					{
-						$(evt.data.selectBox).val( value ).trigger("change");
+						$(evt.data.selectBox).children("option:selected").removeAttr("selected");
+						$(evt.data.selectBox).children('option[value="'+value+'"]').attr('selected', true);
 						
 						// set uiVlaue
 						if (true == settings.showTarget) {
@@ -108,7 +109,7 @@
 			change: function(evt)
 			{
 				var value =  $(this).val();
-				methods.setValue(value, evt.data.container, evt.data.selectBox);
+				methods.setValue(evt.data.newvalue, evt.data.container, evt.data.selectBox);
 			},
 			setValue: function(value, container, selectBox)
 			{

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '1.0-unreleased'
+version = '1.0htug1'
 shortdesc = 'Star Rating Field for PloneFormGen'
 longdesc =  open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()  
 longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()  
