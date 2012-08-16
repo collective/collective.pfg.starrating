@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '1.0dev'
+version = '1.0htug3'
 shortdesc = 'Star Rating Field for PloneFormGen'
 longdesc =  open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()  
 longdesc += open(os.path.join(os.path.dirname(__file__), 'HISTORY.rst')).read()  
@@ -27,7 +27,7 @@ setup(name='collective.pfg.starrating',
       package_dir = {'': 'src'},
       namespace_packages=[],
       include_package_data=True,
-      zip_safe=True,
+      zip_safe=False,
       install_requires=[
             'setuptools',
             'Plone',
