@@ -33,4 +33,3 @@ Contributors
 ============
 
 - Jens W. Klein <jens@bluedynamics.com>
-
