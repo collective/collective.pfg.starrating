@@ -4,7 +4,7 @@ from setuptools import setup
 
 import os
 
-version = '1.0dev0'
+version = '1.0'
 
 shortdesc = 'Star Rating Field for PloneFormGen'
 _basepath = os.path.dirname(__file__)
