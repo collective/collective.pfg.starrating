@@ -73,36 +73,35 @@
 				elm.parents(".content-box-content:first").removeClass('formerror');
 				if( elm.hasClass("ui-rating-cancel") ) {
                     methods.empty(elm, elm.parent());
-                    $(evt.data.selectBox).find("option:selected").removeAttr("selected");
 				}
 				else
 				{
 					//Set us, and the stars before us as full
 					elm.closest(".ui-rating-star").prevAll().andSelf()
 						.not(".ui-rating-cancel")
-						.attr("className", "ui-rating-star ui-rating-full");
+						.prop("className", "ui-rating-star ui-rating-full");
 					//Set the stars after us as empty 
 					elm.closest(".ui-rating-star").nextAll()
 						.not(".ui-rating-cancel")
-						.attr("className", "ui-rating-star ui-rating-empty");
+						.prop("className", "ui-rating-star ui-rating-empty");
 					//Uncheck the cancel
 					elm.siblings(".ui-rating-cancel")
-						.attr("className", "ui-rating-cancel ui-rating-cancel-empty");
+						.prop("className", "ui-rating-cancel ui-rating-cancel-empty");
 					//Use our value
 					value = elm.attr("value");
+				}
 				
-					//Set the select box to the new value
-					if( !evt.data.hasChanged )
-					{
-						$(evt.data.selectBox).val( value ).trigger("change");
-						
-						// set uiVlaue
-						if (true == settings.showTarget) {
-							uiValue = $(evt.data.selectBox).find("option:selected").text();
-							targetId = "#" + evt.data.selectBox.attr("name");
-							$(targetId).text(uiValue);
-					    }
-					}
+				//Set the select box to the new value
+				if( !evt.data.hasChanged )
+				{
+					$(evt.data.selectBox).val( value ).trigger("change");
+					
+					// set uiVlaue
+					if (true == settings.showTarget) {
+						uiValue = $(evt.data.selectBox).find("option:selected").text();
+						targetId = "#" + evt.data.selectBox.attr("name");
+						$(targetId).text(uiValue);
+				    }
 				}
 			},
 			change: function(evt)
@@ -126,8 +125,8 @@
 				parent.find('.ui-rating-star').removeClass('ui-rating-full');
 				parent.find('.ui-rating-star').addClass('ui-rating-empty');				
 				//Clear all of the stars
-				elm.attr("className", "ui-rating-cancel ui-rating-cancel-empty")
-					.nextAll().attr("className", "ui-rating-star ui-rating-empty");
+				elm.prop("className", "ui-rating-cancel ui-rating-cancel-empty")
+					.nextAll().prop("className", "ui-rating-star ui-rating-empty");
 			}
  
         };
@@ -143,7 +142,7 @@
             // we only want to process single select
             if ('select-one' !== this.type) { return; }
             // don't process the same control more than once
-            if (self.attr('hasProcessed')) { return; }
+            if (self.prop('hasProcessed')) { return; }
 
             // if options exist, merge with our settings
             if (options) { $.extend( settings, options); }
@@ -151,20 +150,20 @@
             // hide the select box because we are going to replace it with our control
             self.hide();
             // mark the element so we don't process it more than once.
-            self.attr('hasProcessed', true);
+            self.prop('hasProcessed', true);
             
             //
             // create the new HTML element
             // 
             // create a div and add it after the select box
-            elm = $("<div/>").attr({
+            elm = $("<div/>").prop({
                 title: this.title,  // if there was a title, preserve it.
                 className: "ui-rating"
             }).insertAfter( self );
 			
 			// create the p to hold selected value
 		   if (true == settings.showTarget) {
-				uiValue = $("<p/>").attr({
+				uiValue = $("<p/>").prop({
 		         	id: this.name,  // set id to the input name attribute
 		         	className: "ui-selected-value"
 		    	}).insertAfter( elm );
@@ -174,7 +173,7 @@
                 // only convert options with a value
 				if(this.value!="")
 				{
-                    $("<a/>").attr({
+                    $("<a/>").prop({
                         className: "ui-rating-star ui-rating-empty",
                         title: $(this).text(),   // perserve the option text as a title.
                         value: this.value        // perserve the value.
@@ -183,7 +182,7 @@
             });
             // create the cancel
             if (true == settings.showCancel) {
-                $("<a/>").attr({
+                $("<a/>").prop({
 					className: "ui-rating-cancel ui-rating-cancel-empty",
 					title: settings.cancelTitle
 				}).appendTo(elm);
@@ -202,7 +201,7 @@
             }
             
             //Should we do any binding?
-			if( true !== settings.disabled && self.attr("disabled") !== true )
+			if( true !== settings.disabled && self.prop("disabled") !== true )
 			{	
 			    //Bind our events to the container
 			    $(elm).bind("mouseover", methods.hoverOver)
