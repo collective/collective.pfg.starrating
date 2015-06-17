@@ -2,8 +2,8 @@
 Chnages
 =======
 
-1.0
----
+1.0 (unreleased)
+----------------
 
 - code-style, latest jquery.rating to work with latest Plone 4.3,
   [jensens, 2015-06-17]
